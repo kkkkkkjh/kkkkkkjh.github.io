@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+ <head>
+ <title>자기소개</title>
+  <meta charset="utf-8">
+  <style>
+   body{position:relative;font-size:12px;text-align:right;color:#1e1d20;padding:75px;18px;}
+   body:after{display:block;content:'';clear:both}
+   .wrap:after{display:block;content:'';clear:both}
+   .wrap ul li{width:360px;}
+   #placeholder{float:left;text-align:left;}
+   .bg{position:absolute;top:0;left:20px;float:left;width:140px;height:80px;font-size:8px; }
+   .bg button{width:120px;height:30px;background-color:transparent;border:1px solid #5f626e;margin-left:-30px; }
+   .bg button:hover{color:#dedcf0;transition:1s;border:1px solid #dedcf0;}
+   .wrap_2{margin-top:200px;}
+  </style>
+ <script>
+  var color=["#9dd8dc","#f3776b","#f7c9cb","white"];//4개의 색상데이터가 저장된 배열객체를 변수 color로 참조
+  var i=0;//변수i에 초기값 지정
+  //colorBg 함수를 정의한다.
+  function colorBg(){
+   i++;//변수i에 데이터를 1씩 증가 시킨다.
+   //color.length(4)보다 크거나 같으면 변수i값이 0이 되도록함.3보다 크면 색상값이 나오지 않기때문이다.
+   if(i>=color.length) i=0;
+   //<body>요소를 불러와서 변수bodyTag에 참조
+   
+   var bodyTag=document.getElementsByTagName("body")[0];
+   //css를 이용해 <body>에 배경 색상이 바뀐다.
+   bodyTag.style.backgroundColor=color[i];
+  }
+  
+  function aboutMe(name,area,major){
+   document.write("안녕하세요." + name +"입니다.","<br />");
+   document.write("사는곳은" +area+ "입니다.","<br />");
+   document.write("저는" +major+ "전공 입니다.","<br /><br />");
+    
+  }
+  
+  aboutMe("김지현","계대앞","디지털미디어디자인");
+  
+  
+  var likes = ["movie","walking","mountain","silver accessory","snadals"];
+  var text = "<ul>";
+  var like =likes.length; 
+  likes[likes.length] = "nature";//새로운 엘리먼트인(nature) 을 likes에 추가합니다.
+  document.write('"저는 '+likes +'를 좋아해요."');
+ </script>
+  </head>
+  <body>
+  <div class="wrap">
+   <div class="bg">
+    <button onclick="colorBg();">Change Color</button>
+   </div>
+   <p id="one"></p>
+   <p id="age"></p>
+   <p id="two"></p>
+   <div id="placeholder">
+   지금 하고싶은것은
+    
+   </div>
+  
+  <script>
+   document.getElementById("one").innerHTML = "저는 1학년 2학기때 부터 퍼블리싱을 시작하였습니다."
+   function myFunction(a1, a2){
+    return a1 * a2;
+   }
+   var person = "제 나이는";
+   document.getElementById("age").innerHTML = person + myFunction(11,2) +"살이에요";
+   
+   for(var i=1; i<=10; i++){
+    document.write("지금 어려운건"+i+"번!!"+"반복문을 어떻게 활용할까요.."+"<br />");
+   }   
+   //div를 생성한다.
+   var div = document.getElementById('placeholder');
+   //want 에 데이터를 저장한다
+   var want = ['영화보기','햄버거먹기','여행가기','누워있기','자바스크립트공부하기'],
+       ul = document.createElement('ul'); //ul 엘리먼트를 생성한다.
+
+   //want배열을 통해 반복
+   for(var i in want) {
+    //li 엘리먼트 생성
+    var li = document.createElement('li'),
+        content = document.createTextNode(want); //document에 TextNode생성
+
+    li.appendChild(content); //li엘리먼트에textnode를 붙임
+    ul.appendChild(li); //li엘리먼트를 ul에 붙임
+   }
+   div.appendChild(ul); //ul엘리먼트를 div placeholder에 붙임
+   
+ </script>
+ 
+   
+   </div>
+   <div class="wrap_2">
+   <img src="javamain2.jpg" alt=pic>
+    
+   </div>
+   
+   
+   
+  </body>
+
+ 
+</html>
