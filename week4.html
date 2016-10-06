@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+ <head>
+ 
+  <title>4weeks</title>
+   <meta charset="utf-8">
+  
+
+
+</head>
+ <body>
+  <!--Quest 01
+“이미지슬라이더”라는 컨텐츠를 가진 h1 태그를 생
+“이미지슬라이더”라는 컨텐츠를 가진 h1 태그를 생
+성하고, body 노드의 첫번째 노드로 추가합시다.
+<h1>이미지슬라이더</h1>-->
+  <!--Quest 02
+imageNames 배열의 원소 수 만큼 li 노드객체를 생
+성합시다.
+for 반복문, $(‘<div></div>’)
+————————————————————————————
+Quest 03
+배열의 원소를 src attrubute로 갖는 img 노드를 생
+성하고, Q2에서 생성한 li 노드에 추가합시다.
+<img src=“…” />, append, appendTo-->
+ <h1>이미지슬라이더</h1>
+  
+  
+ </body>
+ <script type="text/javascript" src="./js/jquery.js"></script>
+ <script>
+  $("body").prepend($("h1")); 
+  
+  var imageNames=[]
+
+ </script>
+
+ 
+</html>
+<!--Memo
+노드는 데이터 값.실제로 나타나는게 아님.
+var $li = $('<li><li/>');
+$ul.prepend($li); ㅡ>$ul 노드에 $li노드를 '첫번째'로 추가 (순서가 1,2,3,4)
+$li.prependTo($ul) ㅡ> $ul 노드에 $li노드를 첫번째로 추가.
+$ul.append($li);ㅡ>$ul 노드에 $li노드를 마지막 으로 추가.
+$li.before($li2);ㅡ> li1노드 앞으로 추가
+$li2.insertBefore($li1); 2번을 1번앞에 넣어달라
+-->
+<!-- .html 메소드와 .text 메소드는다름 -->
+<!-- $ul.html('<li></li>'); $ul 노드의 내용을 수정(즉 교체)
+$ul.text('<li></li>'); $ul 노드의 내용을 수정(즉 교체)
+html 과 text의 차이는  text는 단순 문자열
+$ul.html(''); $ul 노드의 내용을 삭제-->
+
+
+ 

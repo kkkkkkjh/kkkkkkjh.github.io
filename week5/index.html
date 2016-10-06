@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+ <head>
+ 
+  <title>4weeks</title>
+   <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/index.css">
+   <link rel="stylesheet" href="./css/normalize.css">
+  
+
+
+</head>
+ <body>
+   <!--Quest 01
+ “이미지슬라이더”라는 컨텐츠를 가진 h1 태그를 생
+ “이미지슬라이더”라는 컨텐츠를 가진 h1 태그를 생
+ 성하고, body 노드의 첫번째 노드로 추가합시다.
+ <h1>이미지슬라이더</h1>-->
+   <!--Quest 02
+ imageNames 배열의 원소 수 만큼 li 노드객체를 생
+ 성합시다.
+ for 반복문, $(‘<div></div>’)
+ ————————————————————————————
+ Quest 03
+ 배열의 원소를 src attrubute로 갖는 img 노드를 생
+ 성하고, Q2에서 생성한 li 노드에 추가합시다.
+ <img src=“…” />, append, appendTo-->
+ <h1>이미지슬라이더</h1>
+  <p id="moveBottom" class="move">저를 아래쪽으로 이동시켜주세요.</p>
+  <section>
+   <div id="imageSlider" class="imageSlider">
+    <ul id="sliderContainer" class="sliderContainer">
+     <!-- 슬라이더 아이템의 위치 -->
+    </ul>
+    <div id="controller" class="controller">
+     <button id="leftButton" class="left">왼쪽으로</button>
+     <button id="rightButton" class="right">오른쪽으로</button>
+    </div>
+   </div>
+    <p id="moveTop" class="move">저를 위쪽으로 이동시켜주세요.</p>
+    <p id="error" class="error">저를 삭제해주세요.</p>
+    <p id="test" class="test">저를 <span>수정</span>해주세요.</p>
+  </section>
+ 
+  
+ </body>
+ <script type="text/javascript" src="./js/jquery.js"></script>
+ <script>
+  /*Q1*/
+  var $body = $('body');
+  var $h1 = $('<h1>이미지슬라이더</h1>');
+  $("body").prepend($("h1")); 
+  
+  /*Q2.3.4*/
+  var imageNames = ['imgs/image01.jpg', 'imgs/image02.jpg', 'imgs/image03.jpg'];
+  for(var i=0; i<imageNames.length; i++){
+   $('ul#sliderContainer').append('<li><img src="'+imageNames[i]+'"</li>');
+  };
+  
+  var imageNames=[]
+  /*Q5*/
+  var $moveTop = $('p#moveTop');
+  /*Q6*/
+  var $moveBottom = $('p#moveBottom');
+
+  var $err = $('p#error');
+  var $test = $('p#test');
+  $body.prepend($moveTop).append($moveBottom);
+  /*Q7*/
+  $err.remove();
+  /*Q7*/
+  $test.text('수정되었습니다');
+  /*Q7*/
+  $test.html('');
+
+  
+  /*#imageSlider css속성중 overflow를 hidden으로 변경합니다*/
+  $('#imageSlider').css('overflow','hidden');
+/*Quest 02#sliderContainer노드의 자식 li 노드의 float 속성을 left로 변경합시다. 
+  그리고 #sliderContainer의하위 노드들 중 img 노드의 height를 592px로 변경합시다.*/
+  $('#sliderContainer > li').css('float','left');
+  $('#sliderContainer img').css('height','592px');
+  
+  /*Quest 03
+#sliderContainer노드의 CSS 속성 중 width를 자식
+노드 li의 width X 개수 로 변경합니다. */
+  
+//var slideWidth = parseInt($('#sliderContainer > li').css('width'));
+  // var numWidth =parseInt($("#sliderContainer > li").css('width'));
+  // $('#sliderContainer > li').css('width','slideNum * slideNum') 이상하게한거
+  
+  
+  var liLenght = $('#sliderContainer > li').size();
+  var liWidth = parseInt($('#sliderContainer > li').css('width'));
+  var ulLenght = liWidth* liLenght;
+  $('#sliderContainer').css('width',ulLenght+'px');
+/*Quest 04
+  #leftButton노드의 컨텐츠를 move left로,
+  #rightButton 노드의 컨텐츠를 move right로 변경
+  합니다.
+   .html(‘content’); .text(‘content’);*/
+  var $leftB = $('#leftButton');
+  $leftB.text('move left');
+  
+  var $rightB = $('#rightButton');
+  $rightB.text('move right');
+  /*Quest 05
+  #leftButton노드의 CSS 속성 중 backgroundcolor를
+  #ff6600 으로 변경하고 color 를 #ffffff로
+  변경합니다.
+   .css({properties})*/
+  $('#leftButton').css('background-color','#ff6600');
+  $('#leftButton').css('color','#ffffff');
+  /*Quest 06
+#rightButton노드의 CSS 속성 중 backgroundcolor를
+#ff8899 으로 변경하고 color 를 #ffffff로
+변경합니다.
+.css(properties);*/
+  $('#rightButton').css('background-color','#ff8899');
+  $('#rightButton').css('color','#ffffff');
+  /*Quest 07
+moveLeft 함수를 생성하고 실행시 #imageSlider
+의 자식 li의 width 만큼 왼쪽으로 이동하도록 애니메
+이션을 작성합시다.
+.animate(properties);*/
+  function moveLeft(){
+   $('#sliderContainer').animate({
+    'margin-left': -800
+   });
+  }
+  function moveRight(){
+   $('#sliderContainer').animate({
+    'margin-left': liWidth * 1
+   });
+  }
+  
+  $('#leftButton').click(moveLeft);
+  $('#rightButton').click(moveRight); 
+   
+  /*Quest 08
+moveRight 함수를 생성하고 실행시 #imageSlider
+의 자식 li의 width 만큼 오른쪽으로 이동하도록 애니
+메이션을 작성합시다.
+.animate(properties);*/
+  
+  
+  /*Quest 09
+#leftButton 클릭시 moveLeft 함수를 실행하고,
+#rightButton 클릭시 moveRight 함수를 실행하도
+록 이벤트를 할당합시다.
+.on(function); click(function);*/
+  
+
+  
+  
+  
+   </script>
+
+ 
+</html>
+<!--Memo
+노드는 데이터 값.실제로 나타나는게 아님.
+var $li = $('<li><li/>');
+$ul.prepend($li); ㅡ>$ul 노드에 $li노드를 '첫번째'로 추가 (순서가 1,2,3,4)
+$li.prependTo($ul) ㅡ> $ul 노드에 $li노드를 첫번째로 추가.
+$ul.append($li);ㅡ>$ul 노드에 $li노드를 마지막 으로 추가.
+$li.before($li2);ㅡ> li1노드 앞으로 추가
+$li2.insertBefore($li1); 2번을 1번앞에 넣어달라
+-->
+<!-- .html 메소드와 .text 메소드는다름 -->
+<!-- $ul.html('<li></li>'); $ul 노드의 내용을 수정(즉 교체)
+$ul.text('<li></li>'); $ul 노드의 내용을 수정(즉 교체)
+html 과 text의 차이는  text는 단순 문자열
+$ul.html(''); $ul 노드의 내용을 삭제-->
+
+
+ 

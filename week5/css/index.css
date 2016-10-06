@@ -1,0 +1,14 @@
+/*CSS for sliderContainer*/
+.imageSlider {margin: 100px auto 0 auto; width: 800px; height:592px; /*overflow: hidden;*/ position: relative;}
+.imageSlider .sliderContainer {padding: 0; margin: 0;}
+.imageSlider .sliderContainer li {list-style: none; margin: 0;}
+.imageSlider .sliderContainer li a {display: block; line-height: 0;}
+.imageSlider .sliderContainer li img {width: 800px; height: auto;}
+
+.imageSlider .controller {position: absolute; left: 0; bottom: 0; width: 100%;}
+.imageSlider .controller button {vertical-align: middle;}
+.imageSlider .controller button.left {float: left;}
+.imageSlider .controller button.right {float: right;}
+.imageSlider .controller button.right:after {clear: both;}
+
+.error {color: #FF6600; font-weight: bold;}
