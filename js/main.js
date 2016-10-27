@@ -76,6 +76,7 @@ jQuery(document).ready(function($){
         setTimeout(function(){
             $('.se-pre-con').fadeOut('slow', function () {
             });
+           //2초후 실행
         },2000); 
     });  
 });

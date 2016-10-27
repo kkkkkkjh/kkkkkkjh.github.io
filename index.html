@@ -132,6 +132,7 @@ sse. Eveniet omnis voluptas, nobis dicta cupiditate odit, similique mollitia eos
         <script src="js/main.js"></script> <!-- Resource jQuery -->
         <script>
             $(document).scroll(function () {
+                //이거는 제가 진짜 이해한 부분이에요.
                 var y = $(this).scrollTop();
                 if (y >470) {
                     $('.c1').fadeIn();
@@ -148,7 +149,7 @@ sse. Eveniet omnis voluptas, nobis dicta cupiditate odit, similique mollitia eos
             });
             $('.topScroll' ).click( function() {
                 $( 'html, body' ).animate({scrollTop:0},"slow");
-                return false;
+                return false;//return값은 왜 있는지 .. 근데 이게 없으니깐 slow기능이 안되더라구요.
             } );
         </script>
        
