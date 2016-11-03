@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+     
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="./css/main.css" />
+        <script src="./js/modernizr.js"></script>
+        <style>
+            .img-zoom {
+                width: 310px;
+                -webkit-transition: all .2s ease-in-out;
+                -moz-transition: all .2s ease-in-out;
+                -o-transition: all .2s ease-in-out;
+                -ms-transition: all .2s ease-in-out;
+            }
+
+            .transition {
+                -webkit-transform: scale(2); 
+                -moz-transform: scale(2);
+                -o-transform: scale(2);
+                transform: scale(2);
+            }
+        </style>
+    </head>
+    <body>
+        <img class="img-zoom" src="./img/Taiwan2.jpg">
+       
+    </body>
+    <script src="js/jquery-2.1.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.img-zoom').hover(function() {
+                $(this).addClass('transition');
+
+            }, function() {
+                $(this).removeClass('transition');
+            });
+        });
+    </script>
+</html>
