@@ -1,0 +1,71 @@
+<form method="GET" action="content.main.php" id="order_form"></form>
+<style type="text/css">
+	@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+	body{ padding:0; margin:0; font-family: 'Nanum Gothic', sans-serif; } img{ max-width:100%; } section{ width:100%; height:1184px; background-image:url('./img/main.jpg');background-repeat:no-repeat;background-position:center; } div{ padding:50px; padding-left:180px; border:1px solid #f5f5f5; } div:after{content:'';display:block;clear:both;} dl{position:relative;width:50%;height:60%; float:left;} dl dt{margin-left:-3px;font-size:16px;letter-spacing:2px; font-weight:bold;color:#696a6f;} dl dd{margin-bottom:18px;margin-left:80px; text-align:center;max-width:50%; font-size:12px;line-height:16px;color:#3c3c40;} dl dd.code{margin-bottom:40px;margin-left:-1px;font-size:11px; text-align:left;color:#b2b4c1;} dl dd.price{font-weight:bold;position: absolute;bottom:0;left:50%;margin-left:-80px;} dl dd.image{border-top:1px solid #f5f5f5;} span{display:inline-block;margin-top:-30px;position:absolute;left: 0; width:4%;height:3px;background-color:#f2cfca;}
+</style>
+
+<input type="text" name="search_value" form="order_form"/>
+<input type="submit" value="search" form="order_form"/>
+
+<!---------------------------------------조건필터링PHP--------------------------------->
+<!---------------------------------------조건필터링PHP--------------------------------->
+<!--폼태그에 아이디 지정(id="if_form") -->
+<!--*****************************************가격 오름차순 내림차순*******************************************-->
+<table>
+	<tr>
+		<th>가격범위</th>
+	</tr>
+	<tr>
+		<td>최소
+			<input type="text" name="price_min"value="0" form="order_form"/>
+		</td>
+	</tr>
+	<td>최대
+		<input type="text" name="price_max"value="100000" form="order_form"/>
+	</td>
+	<td>
+		<input type="submit" value="price" form="order_form"/>
+	</td>
+</table>
+<form method="GET" action="content.main.php" id="order_form"></form>
+<table id="sort_table">
+	<tr>
+		<th>정렬방식</th>
+	</tr>
+	<tr>
+		<td>
+			낮은가격부터
+			<input type="radio" name="money_sort" value="ASC" form="order_form"
+				   		
+				   /> 
+				  <!--
+					만약$_GET['money_sort' 변수가 있다면 = 라디오버튼을 선택했다면
+					그리고 (&&)그 변수가 "ASC"라면 = 오른차순 정렬을 선택한다
+					 --><!--오름차순-->
+		</td>
+		<td>
+			높은가격부터
+			<input type="radio" name="money_sort" value="DESC" form="order_form"
+
+				   checked='checked'				   /> <!--내림차순-->
+		</td>
+		<td>
+			<input type="submit" value="sort" form="order_form"/>
+		</td>
+	</tr>
+</table>
+<!--*****************************************가격 오름차순 내림차순*******************************************-->
+<!-------------------------------------조건필터링시작--------------------------------------->
+	<table id="if_table">
+		<tr>
+			<th>제조사</th>
+				<td><input form='order_form' type='checkbox' name='category1_check[]' value='001'/>립스틱</td><td><input form='order_form' type='checkbox' name='category1_check[]' value='002'/>쉐도우</td><td><input form='order_form' type='checkbox' name='category1_check[]' value='003'/>블러셔</td>			
+		</tr>
+		<tr>
+			<th>타입</th>
+			<td><input form='order_form' type='checkbox' name='category2_check[]' value='A'/>MakeUPForever</td><td><input form='order_form' type='checkbox' name='category2_check[]' value='C'/>Espoir</td><td><input form='order_form' type='checkbox' name='category2_check[]' value='B'/>Benefit</td>		</tr>
+	</table>
+<!----------------------------------------------조건필터링끝--------------------------------------------->
+<input type="submit" form="order_form" value="조건 적용"/>
+										
+Error querying database
