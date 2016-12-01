@@ -17,23 +17,59 @@
              왼쪽편
          </div>
          <div id="project">
-           
-            <div id="poster">포스터이미지</div>
-            <div class="inner">이너컨텐츠</div>
-             <div id="control">클릭</a></div>
+           <div id="poster">
+            포스터이미지
+               <div class="inner">이너컨텐츠</div></div>
+            <div id="poster2">
+                포스터이미지2
+                <div class="inner">이너컨텐츠</div></div>
+             <div id="control">클릭</div>
+         </div>
+         <div id="track">
+           <div class="track-inner"><div class="fill"></div></div>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+            </ul>
          </div>
       </div>
 <script>
-    $('#control').click(function() {
-        $('#about').animate({
-            left: "-50%"
-        }, 200);
-
-        $('#project').animate({
-            left: "0%"
-        }, 200);
+    $('#control').click(function(){
+       if(!$(this).hasClass('on')) {
+            $('#about').animate({
+                left: "-50%"
+            }, 200);
+           $('#track').animate({
+               left: "-50%"
+           }, 200);
+            $('#project').animate({
+                left: "0%"
+            }, 200);
+            $(this).addClass('on');
+            
+        } else {
+            $('#about').animate({
+                left: "0"
+            }, 200);
+            $('#track').animate({
+                left: "49.5%"
+            }, 200);
+            $('#project').animate({
+                left: "50%"
+            }, 200);
+            $(this).removeClass('on');
+        }
     });
     
+    $('#track ul li').click(function(){
+        $('.fill').addClass('trans'); 
+    });
+
     </script>
     </body>
 </html>
