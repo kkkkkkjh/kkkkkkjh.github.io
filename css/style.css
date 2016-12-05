@@ -58,11 +58,12 @@ div{
  width:100%;
  height:100%;
 }
-#poster{
+#poster1{
  position:absolute;
  width:50%;
  height:100%;
  left:0;
+ top:0;
 }
 #poster2{
  position:absolute;
@@ -117,6 +118,12 @@ div{
  background-color:transparent;
  border-bottom:1px solid #000000;
 }
+#track ul li a{
+ display:block;
+ width:20px;
+ height:100%;
+}
+
 #track ul li span {
  width:100%;
  padding-top:15px;
@@ -125,11 +132,11 @@ div{
 }
 #track ul li:hover span{
 display: block;
- position: absolute;
-
+position: absolute;
 width:100%;
 color:red;
 }
+
 .track-inner{
  position:absolute;
  top:0;
