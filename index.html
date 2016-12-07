@@ -90,6 +90,14 @@
     });
     
     var content = $('ul.content');
+
+    /*
+    offset() 메서드는 스크린 최상단으로부터의 거리이기때문에 content 엘리먼트의 위치를 이동하게될 경우
+    offset().top이 변경되게 되므로 정확한 값이 출력될 수 없습니다.
+    content의 위치 이동을 정확히 하기 위해서는 여러 방법이 있을텐데, track의 ul>li의 길이에 따라 content의 높이를
+    나누어 전체 구역을 구분한 후 클릭된 li의 index를 조사후 해당 구역으로 이동하는 방법이 현재 전체 높이를 활용하는
+    형태에는 가장 적합할 것 같습니다.
+    */
     
     $("li.num1").click(function() {
         $(content).stop().animate({
