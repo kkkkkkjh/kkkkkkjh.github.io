@@ -72,6 +72,13 @@ div{
  left:0;
  top:100%;
 }
+#poster3{
+ position:absolute;
+ width:50%;
+ height:100%;
+ left:0;
+ top:200%;
+}
 .inner{
  position:absolute;
  width:100%;
@@ -153,8 +160,25 @@ color:red;
  height:100%;
  background-color:white;
 }
-
 .trans{
  -webkit-transform: translate3d(0,30px,0);
  transform: translate3d(0,30px,0);
+}
+.change{
+background-color: antiquewhite;
+}
+#project ul{
+ height:100%;
+ overflow: hidden;
+}
+#project ul li{
+ margin:0;
+ padding:0;
+ height:100%;
+}
+#project ul li div{
+ height:100%;
+}
+.active {
+border-left:2px solid #f5f5f5;
 }

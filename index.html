@@ -15,31 +15,36 @@
       <div id="wrap">
          <div id="about">
              왼쪽편
+           
          </div>
          <div id="project">
-           <div id="poster1" class="content" >
-            포스터이미지1
-               <div class="inner">이너컨텐츠1</div>
-            </div>
-            <div id="poster2" class="content">
-                포스터이미지2
-                <div class="inner">이너컨텐츠2</div>
-            </div>
+            <ul class="content">
+                 <li class="c1">1번</li>
+                 <li class="c2">2번</li>
+                 <li class="c3">3번</li>
+                 <li class="c4">4번</li>
+                 <li class="c5">5번</li>
+                 <li class="c6">6번</li>
+                <li class="c7">7번</li>
+                <li class="c8">8번</li>
+                <li class="c9">9번</li>
+                <li class="c10">10번</li>
+             </ul>
              <div id="control">클릭</div>
-         </div>
+        </div>
          <div id="track">
            <div class="track-inner"><div class="fill"></div></div>
-            <ul>
+            <ul class="item">
                 <li class="num1"><span>1</span></li>
                 <li class="num2"><span>2</span></li>
-                <li><span>3</span></li>
-                <li><span>4</span></li>
-                <li><span>5</span></li>
-                <li><span>6</span></li>
-                <li><span>7</span></li>
-                <li><span>8</span></li>
-                <li><span>9</span></li>
-                <li><span>10</span></li>
+                <li class="num3"><span>3</span></li>
+                <li class="num4"><span>4</span></li>
+                <li class="num5"><span>5</span></li>
+                <li class="num6"><span>6</span></li>
+                <li class="num7"><span>7</span></li>
+                <li class="num8"><span>8</span></li>
+                <li class="num9"><span>9</span></li>
+                <li class="num10"><span>10</span></li>
 
             </ul>
          </div>
@@ -78,22 +83,76 @@
                     top:y 
                 }, 400);
     });
- 
-    $("#track ul li.num2").click(function(event) {
-        $('#poster1').stop().animate({ "top": "-=100%" }, "slow" );
-
-        $('#poster2').stop().animate({ "top": "-=100%" }, "slow" );
+    
+    $('#track ul li').click(function(event) {
+        $('ul').children().removeClass('change');
+        $(this).closest('li').addClass('change');
     });
-    $("#track ul li.num1").click(function(event) {
-        $('#poster1').stop().animate({ "top": "+=100%" }, "slow" );
-
-        $('#poster2').stop().animate({ "top": "+=100%" }, "slow" );
+    
+    $("li.num1").click(function() {
+        $('ul.content').animate({
+            scrollTop: $(".c1").offset().top
+        }, 300);
+    });
+    $("li.num2").click(function() {
+        $('ul.content').animate({
+            scrollTop: $(".c2").offset().top
+        }, 300);
+    });
+    $("li.num3").click(function() {
+        $('ul.content').animate({
+            scrollTop: $(".c3").offset().top
+        }, 300);
+    });
+    $("li.num4").click(function() {
+        $('ul.content').animate({
+            scrollTop: $(".c4").offset().top
+        }, 300);
+    });
+    $("li.num5").click(function() {
+        $('ul.content').animate({
+            scrollTop: $(".c5").offset().top
+        }, 300);
+    });
+    $("li.num6").click(function() {
+        $('ul.content').animate({
+            scrollTop: $(".c6").offset().top
+        }, 300);
+    });
+    $("li.num7").click(function() {
+        $('ul.content').animate({
+            scrollTop: $(".c7").offset().top
+        }, 300);
+    });
+    $("li.num8").click(function() {
+        $('ul.content').animate({
+            scrollTop: $(".c8").offset().top
+        }, 300);
+    });
+    $("li.num9").click(function() {
+        $('ul.content').animate({
+            scrollTop: $(".c9").offset().top
+        }, 300);
+    });
+    $("li.num10").click(function() {
+        $('ul.content').animate({
+            scrollTop: $(".c10").offset().top
+        }, 300);
     });
   
-    
 
     
- 
+    var item = $('ul.item li');
+    var content = $('ul.content li');
+    var last = item.length-1;
+    var wrap = $('#project ul.content');
+    var contentHeight = content.height();
+    var target;
+    item.first().addClass('selected');
+   
+
+   
+
     </script>
     </body>
 </html>
