@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
     <script src="./js/jquery.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
 </head>
     <body>
       <div id="wrap">
@@ -29,6 +30,7 @@
                  <li class="c8">8번</li>
                  <li class="c9">9번</li>
                  <li class="c10">10번</li>
+                 <li>.</li>
              </ul>
              <div id="control">클릭</div>
         </div>
@@ -54,29 +56,27 @@
        if(!$(this).hasClass('on')) {
             $('#about').animate({
                 left: "-50%"
-            }, 200);
+            }, 400,'swing');
            $('#track').animate({
                left: "-50%"
-           }, 200);
+           }, 400,'swing');
             $('#project').animate({
                 left: "0%"
-            }, 200);
+            }, 400,'swing');
             $(this).addClass('on');
-            
         } else {
             $('#about').animate({
                 left: "0"
-            }, 200);
+            }, 400,'swing');
             $('#track').animate({
                 left: "49.5%"
-            }, 200);
+            }, 400,'swing');
             $('#project').animate({
                 left: "50%"
-            }, 200);
+            }, 400,'swing');
             $(this).removeClass('on');
         }
     });
-    
     $("#track ul").click(function(event) {
         var y = event.pageY;
           $('.fill').animate({
@@ -84,39 +84,120 @@
                 }, 400);
     });
     
-    $('#track ul li').click(function(event) {
+
+    var content = $('ul.content'),
+        contentList = $('ul.content li').height(),
+        itemList = $('ul.item li'),
+        itemHeight = itemList.height(),
+        contentHeight = content.height(),
+        contentResult = contentHeight/10,
+        index = itemList.index( this );
+
+    $('ul.item li').click(function(event) {
         $('ul').children().removeClass('change');
         $(this).closest('li').addClass('change');
+        
+      
     });
-    
-    var content = $('ul.content');
-    
+    $('ul.item li:first-child').click(function(event) {
+        if($(this).hasClass('change')) {
+            $('ul.content li:first-child').css({'margin-top':0});
+            $(this).removeClass('change');
+        }
+
+    });
+
+    $('ul.item li:nth-child(2)').click(function(event) {
+     if(!$(this).hasClass('change')) {
+         $('ul.content li:first-child').css({'margin-top':contentList});
+         $(this).removeClass('change');
+     }else{
+         $('ul.content li:first-child').css({'margin-top':-contentList });
+         $(this).addClass('change');
+     }
+    });
+    $('ul.item li:nth-child(3)').click(function(event) {
+        if(!$(this).hasClass('change')) {
+            $('ul.content li:first-child').css({'margin-top':contentList});
+            $(this).removeClass('change');
+        }else{
+            $('ul.content li:first-child').css({'margin-top':-contentList*2 });
+            $(this).addClass('change');
+        }
+    });
+    $('ul.item li:nth-child(4)').click(function(event) {
+        if(!$(this).hasClass('change')) {
+            $('ul.content li:first-child').css({'margin-top':contentList});
+            $(this).removeClass('change');
+        }else{
+            $('ul.content li:first-child').css({'margin-top':-contentList*3 });
+            $(this).addClass('change');
+        }
+    });
+    $('ul.item li:nth-child(5)').click(function(event) {
+        if(!$(this).hasClass('change')) {
+            $('ul.content li:first-child').css({'margin-top':contentList});
+            $(this).removeClass('change');
+        }else{
+            $('ul.content li:first-child').css({'margin-top':-contentList*4 });
+            $(this).addClass('change');
+        }
+    });
+    $('ul.item li:nth-child(6)').click(function(event) {
+        if(!$(this).hasClass('change')) {
+            $('ul.content li:first-child').css({'margin-top':contentList});
+            $(this).removeClass('change');
+        }else{
+            $('ul.content li:first-child').css({'margin-top':-contentList*5 });
+            $(this).addClass('change');
+        }
+    });
+    $('ul.item li:nth-child(7)').click(function(event) {
+        if(!$(this).hasClass('change')) {
+            $('ul.content li:first-child').css({'margin-top':contentList});
+            $(this).removeClass('change');
+        }else{
+            $('ul.content li:first-child').css({'margin-top':-contentList*6 });
+            $(this).addClass('change');
+        }
+    });
+    $('ul.item li:nth-child(8)').click(function(event) {
+        if(!$(this).hasClass('change')) {
+            $('ul.content li:first-child').css({'margin-top':contentList});
+            $(this).removeClass('change');
+        }else{
+            $('ul.content li:first-child').css({'margin-top':-contentList*7 });
+            $(this).addClass('change');
+        }
+    });
+    $('ul.item li:nth-child(9)').click(function(event) {
+        if(!$(this).hasClass('change')) {
+            $('ul.content li:first-child').css({'margin-top':contentList});
+            $(this).removeClass('change');
+        }else{
+            $('ul.content li:first-child').css({'margin-top':-contentList*8 });
+            $(this).addClass('change');
+        }
+    });
+    $('ul.item li:nth-child(10)').click(function(event) {
+        if(!$(this).hasClass('change')) {
+            $('ul.content li:first-child').css({'margin-top':contentList});
+            $(this).removeClass('change');
+        }else{
+            $('ul.content li:first-child').css({'margin-top':-contentList*9 });
+            $(this).addClass('change');
+        }
+    });
+
+  /*
+  
+
     $("li.num1").click(function() {
         $(content).stop().animate({
             scrollTop: $(".c1").offset().top
         }, 600);
     });
-    $("li.num2").click(function() {
-        $(content).stop().animate({
-            scrollTop: $(".c2").offset().top
-        }, 600);
-    });
-    $("li.num3").click(function() {
-        $(content).stop().animate({
-            scrollTop: $(".c3").offset().top
-        }, 600);
-    });
-    $("li.num4").click(function() {
-        $(content).stop().animate({
-            scrollTop: $(".c4").offset().top
-        }, 600);
-    });
-    $("li.num5").click(function() {
-        $(content).stop().animate({
-            scrollTop: $(".c5").offset().top
-        }, 600);
-    });
-  /*
+
     var item = $('ul.item li');
     var content = $('ul.content li');
     var last = item.length-1;
