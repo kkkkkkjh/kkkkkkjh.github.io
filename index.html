@@ -25,10 +25,10 @@
                  <li class="c4">4번</li>
                  <li class="c5">5번</li>
                  <li class="c6">6번</li>
-                <li class="c7">7번</li>
-                <li class="c8">8번</li>
-                <li class="c9">9번</li>
-                <li class="c10">10번</li>
+                 <li class="c7">7번</li>
+                 <li class="c8">8번</li>
+                 <li class="c9">9번</li>
+                 <li class="c10">10번</li>
              </ul>
              <div id="control">클릭</div>
         </div>
@@ -89,55 +89,32 @@
         $(this).closest('li').addClass('change');
     });
     
+    var content = $('ul.content');
+    
     $("li.num1").click(function() {
-        $('ul.content').animate({
+        $(content).stop().animate({
             scrollTop: $(".c1").offset().top
-        }, 300);
+        }, 600);
     });
     $("li.num2").click(function() {
-        $('ul.content').animate({
+        $(content).stop().animate({
             scrollTop: $(".c2").offset().top
-        }, 300);
+        }, 600);
     });
     $("li.num3").click(function() {
-        $('ul.content').animate({
+        $(content).stop().animate({
             scrollTop: $(".c3").offset().top
-        }, 300);
+        }, 600);
     });
     $("li.num4").click(function() {
-        $('ul.content').animate({
+        $(content).stop().animate({
             scrollTop: $(".c4").offset().top
-        }, 300);
+        }, 600);
     });
     $("li.num5").click(function() {
-        $('ul.content').animate({
+        $(content).stop().animate({
             scrollTop: $(".c5").offset().top
-        }, 300);
-    });
-    $("li.num6").click(function() {
-        $('ul.content').animate({
-            scrollTop: $(".c6").offset().top
-        }, 300);
-    });
-    $("li.num7").click(function() {
-        $('ul.content').animate({
-            scrollTop: $(".c7").offset().top
-        }, 300);
-    });
-    $("li.num8").click(function() {
-        $('ul.content').animate({
-            scrollTop: $(".c8").offset().top
-        }, 300);
-    });
-    $("li.num9").click(function() {
-        $('ul.content').animate({
-            scrollTop: $(".c9").offset().top
-        }, 300);
-    });
-    $("li.num10").click(function() {
-        $('ul.content').animate({
-            scrollTop: $(".c10").offset().top
-        }, 300);
+        }, 600);
     });
   /*
     var item = $('ul.item li');
