@@ -193,6 +193,5 @@ right content
             $(this).addClass('change');
         }
     });
-    
 
 });
